@@ -29,7 +29,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="text-xl font-bold text-text hover:text-primary transition-colors duration-300 smooth-transition">
-            Aqil Makarim
+            Muhammad Athaqil Makarim
           </Link>
 
           {/* Desktop Navigation */}
