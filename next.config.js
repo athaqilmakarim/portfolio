@@ -1,9 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
+  // Remove output: 'export' for Vercel deployment
+  // Vercel handles static generation automatically
   images: {
-    unoptimized: true
+    domains: [],
+    unoptimized: false
+  },
+  // Enable static optimization
+  trailingSlash: false,
+  // Optimize for production
+  compress: true,
+  // Enable experimental features
+  experimental: {
+    optimizeCss: true
   }
 }
 
