@@ -4,6 +4,7 @@ import Link from 'next/link';
 interface ButtonProps {
   children: React.ReactNode;
   variant?: 'primary' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
   href?: string;
   onClick?: () => void;
   className?: string;
@@ -11,10 +12,16 @@ interface ButtonProps {
   rel?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', href, onClick, className, target, rel }) => {
+const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', size = 'md', href, onClick, className, target, rel }) => {
   const baseStyles = "relative overflow-hidden rounded-[var(--radius)] px-4 py-2 font-medium transition-all duration-300 ease-out focus-outline active:scale-[0.98] group";
   const primaryStyles = "bg-primary text-text/90 border border-border hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5";
   const ghostStyles = "bg-transparent text-text border border-transparent hover:bg-border/60 hover:border-primary/30 hover:text-primary hover:shadow-md hover:-translate-y-0.5";
+
+  const sizeStyles = {
+    sm: "px-3 py-1.5 text-sm",
+    md: "px-4 py-2 text-base",
+    lg: "px-6 py-3 text-lg"
+  };
 
   const content = (
     <span className={`relative z-10 transition-all duration-300 ${variant === 'primary' ? 'text-text/90' : 'text-text'}`}>
@@ -24,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', href, on
 
   const buttonElement = (
     <button
-      className={`${baseStyles} ${variant === 'primary' ? primaryStyles : ghostStyles} ${className || ''}`}
+      className={`${baseStyles} ${sizeStyles[size]} ${variant === 'primary' ? primaryStyles : ghostStyles} ${className || ''}`}
       onClick={onClick}
     >
       {variant === 'primary' && (

@@ -7,14 +7,14 @@ const Footer = () => {
         <p className="mb-4 md:mb-0">&copy; {new Date().getFullYear()} Aqil Makarim. All rights reserved.</p>
         <div className="flex space-x-4">
           <Link
-            href="mailto:athaqilm@gmail.com"
+            href="mailto:athaqil.makarim@gmail.com"
             className="link-hover-primary focus-outline"
             style={{ textDecoration: 'none' }}
           >
             Email
           </Link>
           <Link
-            href="https://linkedin.com/in/muhammad-athaqil-makarim"
+            href="https://www.linkedin.com/in/muhammad-athaqil-makarim-706238200"
             target="_blank"
             rel="noopener noreferrer"
             className="link-hover-primary focus-outline"
@@ -23,7 +23,7 @@ const Footer = () => {
             LinkedIn
           </Link>
           <Link
-            href="https://github.com/athaqilm"
+            href="https://github.com/athaqilmakarim"
             target="_blank"
             rel="noopener noreferrer"
             className="link-hover-primary focus-outline"
