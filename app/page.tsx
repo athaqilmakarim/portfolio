@@ -1,103 +1,64 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { projects } from '@/data/projects';
+import Button from '@/components/Button';
+import Card from '@/components/Card';
+import Tag from '@/components/Tag';
+import Section from '@/components/Section';
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const featuredProjects = projects.slice(0, 3);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="relative">
+      <Section className="hero-section text-center py-16 md:py-24">
+        <div className="hero-text-wrapper">
+          <h1 className="hero-title text-5xl md:text-7xl font-extrabold gradient-text">
+            Data-minded developer with a designer&apos;s eye.
+          </h1>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <p className="text-lg md:text-xl text-text/80 max-w-3xl mx-auto mb-8">
+          I turn complex systems and data into clear, usable, and responsive interfaces. My passion lies in crafting intuitive user experiences backed by robust data insights and efficient code.
+        </p>
+        <div className="flex justify-center space-x-4">
+          <Button variant="ghost" href="/experience">Work Experience</Button>
+          <Button variant="ghost" href="/projects">View Projects</Button>
+          <Button variant="ghost" href="/files/CV.pdf" target="_blank" rel="noopener noreferrer">Download CV</Button>
+        </div>
+      </Section>
+
+      <Section className="py-10 md:py-16">
+        <h2 className="text-4xl font-bold mb-8 text-center">Featured Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
+          {featuredProjects.map((project, index) => (
+            <Link key={project.slug} href={`/projects/${project.slug}`} className="group project-card">
+              <Card className="h-full flex flex-col">
+                <div className="flex-1 flex flex-col">
+                  <div className="flex justify-between items-center mb-4">
+                    <span className="text-sm font-semibold text-primary/80 group-hover:text-primary transition-colors duration-300">Project {String(index + 1).padStart(2, '0')}</span>
+                    <div className="w-8 h-8 rounded-full bg-border/50 group-hover:bg-primary/20 flex items-center justify-center text-text/60 group-hover:text-primary transition-all duration-300">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                    </div>
+                  </div>
+
+                  <h3 className="text-2xl font-bold mb-2 text-text group-hover:text-primary transition-colors duration-300" style={{ minHeight: '3rem' }}>{project.title}</h3>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag) => (
+                      <Tag key={tag} className="bg-surface/60 border-surface/80 text-text/70 group-hover:bg-primary/10 group-hover:border-primary/30 group-hover:text-primary transition-all duration-300">{tag}</Tag>
+                    ))}
+                  </div>
+                  <p className="text-text/80 text-base flex-1 group-hover:text-text/90 transition-colors duration-300">{project.summary}</p>
+                </div>
+                <div className="mt-auto pt-4 text-primary/80 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300 ease-out">
+                  View Project Details &rarr;
+                </div>
+              </Card>
+            </Link>
+          ))}
+        </div>
+        <div className="text-center mt-10">
+          <Button variant="ghost" href="/projects">View all projects &rarr;</Button>
+        </div>
+      </Section>
     </div>
   );
 }

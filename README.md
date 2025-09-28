@@ -1,36 +1,144 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aqil Makarim - Portfolio Website
 
-## Getting Started
+A modern, minimalist portfolio website built with Next.js and Tailwind CSS, showcasing my work in Frontend Development, UI/UX Design, and Data Analytics.
 
-First, run the development server:
+## 🚀 Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+[View Live Portfolio](https://your-portfolio-url.vercel.app)
+
+## ✨ Features
+
+- **Modern Design**: Clean, minimalist aesthetic with professional color palette
+- **Responsive**: Fully responsive design that works on all devices
+- **Interactive**: Smooth hover animations and micro-interactions
+- **Fast**: Built with Next.js for optimal performance
+- **Accessible**: WCAG compliant with proper focus states and keyboard navigation
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15
+- **Styling**: Tailwind CSS 3
+- **Language**: TypeScript
+- **Deployment**: Vercel
+- **Icons**: Custom SVG icons
+
+## 📁 Project Structure
+
+```
+my-portfolio/
+├── app/                    # Next.js app directory
+│   ├── about/             # About page
+│   ├── contact/           # Contact page
+│   ├── experience/        # Work experience page
+│   ├── projects/          # Projects listing and detail pages
+│   ├── globals.css        # Global styles
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx           # Home page
+├── components/            # Reusable components
+│   ├── Button.tsx         # Button component
+│   ├── Card.tsx           # Card component
+│   ├── Footer.tsx         # Footer component
+│   ├── Navbar.tsx         # Navigation component
+│   ├── Section.tsx        # Section wrapper
+│   └── Tag.tsx            # Tag component
+├── data/                  # Data files
+│   ├── experience.ts      # Work experience data
+│   └── projects.ts        # Projects data
+├── public/                # Static assets
+│   ├── files/             # PDF files (CV, reports)
+│   └── images/            # Project images
+└── tailwind.config.js     # Tailwind configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Design System
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Color Palette
+- **Background**: #FAF9EE (Cream)
+- **Surface**: #DCCFC0 (Light Beige)
+- **Border**: #EEEEEE (Light Gray)
+- **Primary**: #A2AF9B (Sage Green)
+- **Text**: #1F2A2E (Dark Gray)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Typography
+- **Font Family**: Inter (with system font fallbacks)
+- **Responsive**: Fluid typography with clamp() for optimal scaling
 
-## Learn More
+## 🚀 Getting Started
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/portfolio.git
+cd portfolio
+```
 
-## Deploy on Vercel
+2. Install dependencies
+```bash
+npm install
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Run the development server
+```bash
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+### Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+## 📱 Pages
+
+- **Home**: Hero section with featured projects
+- **Experience**: Work experience and professional background
+- **Projects**: Portfolio of work with filtering and detailed case studies
+- **About**: Personal bio, education, skills, and certifications
+- **Contact**: Contact information and social links
+
+## 🎯 Key Features
+
+### Interactive Elements
+- Smooth hover animations on cards and buttons
+- Active page indication in navigation
+- Responsive image optimization
+- Modern micro-interactions
+
+### Performance
+- Optimized images with Next.js Image component
+- Static generation for fast loading
+- Minimal JavaScript bundle
+- CSS optimization with Tailwind
+
+### Accessibility
+- Semantic HTML structure
+- Proper ARIA labels
+- Keyboard navigation support
+- High contrast ratios
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+Feel free to fork this project and submit pull requests for any improvements.
+
+## 📞 Contact
+
+**Aqil Makarim**
+- Email: athaqilm@gmail.com
+- LinkedIn: [Muhammad Athaqil Makarim](https://linkedin.com/in/muhammad-athaqil-makarim)
+- GitHub: [athaqilm](https://github.com/athaqilm)
+
+---
+
+Built with ❤️ by Aqil Makarim

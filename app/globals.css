@@ -1,26 +1,249 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --radius: 16px;
+  --background: #FAF9EE;
+  --surface: #DCCFC0;
+  --border: #EEEEEE;
+  --primary: #A2AF9B;
+  --text: #1F2A2E;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+h1 { 
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+  padding-bottom: 0.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+    line-height: 1.3;
+    padding-bottom: 0.75rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+h2 { 
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+}
+
+h3 { 
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  h3 {
+    font-size: 1.875rem;
+    line-height: 1.3;
+  }
+}
+
+p { 
+  line-height: 1.7;
+  font-size: 0.9375rem;
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+a { 
+  text-underline-offset: 4px;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+* { 
+  -webkit-tap-highlight-color: transparent;
+}
+
+*::selection {
+  background-color: rgba(162, 175, 155, 0.2);
+  color: var(--text);
+}
+
+.focus-outline { 
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-outline:focus-visible {
+  outline: 2px solid rgba(162, 175, 155, 0.6);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(162, 175, 155, 0.1);
+}
+
+.link-hover-primary {
+  @apply transition-all duration-300 ease-out;
+}
+.link-hover-primary:hover {
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, var(--primary), var(--text));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Ensure proper spacing for the actual text */
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  padding-bottom: 0.5rem;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .gradient-text {
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    padding-bottom: 0.75rem;
+  }
+}
+
+/* Modern hover animations */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.hover-glow {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(162, 175, 155, 0.15);
+}
+
+.hover-scale {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, [role="button"] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced focus states */
+.focus-outline:focus-visible {
+  outline: 2px solid rgba(162, 175, 155, 0.6);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(162, 175, 155, 0.1);
+}
+
+/* Subtle animation for project cards */
+.project-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth text color transitions */
+.text-transition {
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced button shine effect */
+@keyframes shine {
+  0% { 
+    background-position: -200% 0; 
+  }
+  100% { 
+    background-position: 200% 0; 
+  }
+}
+
+.animate-shine {
+  animation: shine 3s infinite linear;
+}
+
+/* Smooth backdrop blur transitions */
+.backdrop-blur-transition {
+  transition: backdrop-filter 0.3s ease-out;
+}
+
+/* Modern card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-color: rgba(162, 175, 155, 0.3);
+}
+
+/* Fix for large hero text spacing - prevent descender overlap */
+.hero-title {
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  overflow: visible;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    margin-bottom: 2.5rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
+/* Additional spacing for hero section to prevent overlap */
+.hero-section {
+  padding-bottom: 3rem;
+  overflow: visible;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    padding-bottom: 4rem;
+  }
+}
+
+/* Ensure text containers don't clip descenders */
+.text-container {
+  overflow: visible;
+  padding-bottom: 1rem;
+}
+
+/* Fix for any white background clipping */
+.hero-text-wrapper {
+  background: transparent;
+  padding: 1rem 0;
+  margin: -1rem 0;
 }
