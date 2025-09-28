@@ -1,19 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Remove output: 'export' for Vercel deployment
-  // Vercel handles static generation automatically
+  // Basic Next.js configuration for Vercel
   images: {
-    domains: [],
-    unoptimized: false
+    unoptimized: true
   },
-  // Enable static optimization
+  // Disable experimental features that might cause issues
+  experimental: {},
+  // Ensure proper static generation
   trailingSlash: false,
-  // Optimize for production
-  compress: true,
-  // Enable experimental features
-  experimental: {
-    optimizeCss: true
-  }
+  // Disable CSS optimization that requires critters
+  optimizeCss: false
 }
 
 module.exports = nextConfig
