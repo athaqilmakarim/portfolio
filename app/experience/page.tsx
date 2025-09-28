@@ -13,7 +13,7 @@ export default function ExperiencePage() {
             Work Experience
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-text/80 max-w-2xl mx-auto animate-fade-in-up animate-delay-300">
-            A detailed look into my professional roles, achievements, and the impact I&apos;ve made in each position.
+            A detailed look into my professional roles, achievements, and the impact I&#39;ve made in each position.
           </p>
         </div>
 

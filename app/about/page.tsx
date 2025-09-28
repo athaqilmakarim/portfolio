@@ -3,7 +3,7 @@ import Tag from '@/components/Tag';
 import Card from '@/components/Card';
 
 export default function AboutPage() {
-  const bio = `I&apos;m Muhammad Athaqil Makarim (Aqil), a double-degree Computer Science graduate from the University of Queensland and the University of Indonesia (2025). My passion lies in transforming complex systems and data into clear, usable, and responsive interfaces. I thrive on crafting intuitive user experiences backed by robust data insights and efficient code. I&apos;m interested in roles as a Software Engineer (Frontend/Full-stack), UI/UX Designer, or Data Analyst.`;
+  const bio = `I'm Muhammad Athaqil Makarim (Aqil), a double-degree Computer Science graduate from the University of Queensland and the University of Indonesia (2025). My passion lies in transforming complex systems and data into clear, usable, and responsive interfaces. I thrive on crafting intuitive user experiences backed by robust data insights and efficient code. I'm interested in roles as a Software Engineer (Frontend/Full-stack), UI/UX Designer, or Data Analyst.`;
 
   const educationCourses = [
     "Web Design", "Human-Computer Interaction", "Information Visualization",
@@ -97,7 +97,7 @@ export default function AboutPage() {
               Bachelor of Computer Science (Double Degree)
             </p>
             <p className="text-sm sm:text-base text-text/80 mb-3 md:mb-4">
-              University of Queensland (Australia) & University of Indonesia (Indonesia) &mdash; Graduated 2025
+              University of Queensland (Australia) & University of Indonesia (Indonesia) — Graduated 2025
             </p>
             <h3 className="text-base sm:text-lg font-semibold text-text mb-2">Relevant Coursework:</h3>
             <div className="flex flex-wrap gap-1 md:gap-2">

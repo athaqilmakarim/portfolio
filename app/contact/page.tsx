@@ -12,7 +12,7 @@ export default function ContactPage() {
         </svg>
       ),
       title: "Email",
-      description: "Let&apos;s discuss your project or just say hello",
+      description: "Let's discuss your project or just say hello",
       value: "athaqil.makarim@gmail.com",
       href: "mailto:athaqil.makarim@gmail.com",
       color: "text-blue-600"
@@ -55,10 +55,10 @@ export default function ContactPage() {
       <Section>
         <div className="text-center mb-8 md:mb-12 animate-fade-in-up">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 gradient-text animate-fade-in-up animate-delay-200">
-            Let&apos;s Work Together
+            Let&#39;s Work Together
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-text/80 max-w-2xl mx-auto animate-fade-in-up animate-delay-300">
-            I&apos;m always excited to discuss new opportunities, collaborate on interesting projects, or just have a chat about technology and design.
+            I&#39;m always excited to discuss new opportunities, collaborate on interesting projects, or just have a chat about technology and design.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export default function ContactPage() {
                   href={method.href}
                   target={method.href.startsWith('http') ? '_blank' : undefined}
                   rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className={`font-medium hover:underline transition-colors duration-300 ${method.color} smooth-transition text-sm break-all`}
+                  className={`font-medium hover:underline transition-colors duration-300 ${method.color} smooth-transition text-sm whitespace-nowrap`}
                 >
                   {method.value}
                 </Link>
@@ -105,7 +105,7 @@ export default function ContactPage() {
           <div className="py-6 md:py-8 px-4">
             <h2 className="text-xl sm:text-2xl font-bold text-text mb-3 md:mb-4">Ready to Get Started?</h2>
             <p className="text-sm sm:text-base text-text/80 mb-4 md:mb-6 max-w-2xl mx-auto">
-              Whether you have a project in mind, want to discuss opportunities, or just want to connect, I&apos;d love to hear from you.
+              Whether you have a project in mind, want to discuss opportunities, or just want to connect, I&#39;d love to hear from you.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <Link href="mailto:athaqil.makarim@gmail.com">

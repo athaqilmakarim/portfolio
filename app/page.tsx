@@ -19,7 +19,7 @@ export default function Home() {
 
       <Section className="text-center py-12 md:py-16 lg:py-24 relative z-10 hero-section animate-fade-in-up">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-4 gradient-text hero-title animate-fade-in-up animate-delay-200">
-          Data-minded developer with a designer&apos;s eye.
+          Data-minded developer with a designer&#39;s eye.
         </h1>
         <p className="text-base sm:text-lg md:text-xl text-text/80 max-w-3xl mx-auto mb-6 md:mb-8 px-4 animate-fade-in-up animate-delay-300">
           I turn complex systems and data into clear, usable, and responsive interfaces. My passion lies in crafting intuitive user experiences backed by robust data insights and efficient code.
@@ -52,7 +52,7 @@ export default function Home() {
                       <Tag key={tag} className="bg-surface/60 border-surface/80 text-text/70 hover-scale text-xs">{tag}</Tag>
                     ))}
                   </div>
-                  <p className="text-sm sm:text-base text-text/80 flex-1 project-summary leading-relaxed">{project.summary}</p>
+                  <p className="text-xs sm:text-sm md:text-base text-text/80 flex-1 project-summary leading-relaxed">{project.summary}</p>
                 </div>
                 <div className="mt-auto pt-3 md:pt-4 text-primary/80 group-hover:translate-x-1 transition-transform duration-200 ease-out-expo project-link-text text-sm">
                   View Project Details &rarr;
