@@ -11,6 +11,13 @@ interface ProjectPageProps {
   };
 }
 
+// Generate static params for all projects
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
+
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const project = projects.find(p => p.slug === params.slug);
 
