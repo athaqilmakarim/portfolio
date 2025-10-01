@@ -10,11 +10,11 @@ export default function Home() {
 
   return (
     <div className="relative">
-      {/* Background Decorations */}
-      <div className="absolute inset-0 -z-10 opacity-20">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
-        <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-surface rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-border rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+      {/* Background Decorations - Simplified for performance */}
+      <div className="absolute inset-0 -z-10 opacity-10">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary rounded-full opacity-20"></div>
+        <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-surface rounded-full opacity-20"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-border rounded-full opacity-20"></div>
       </div>
 
       <Section className="text-center py-12 md:py-16 lg:py-24 relative z-10 hero-section animate-fade-in-up">

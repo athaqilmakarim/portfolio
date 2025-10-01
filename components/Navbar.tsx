@@ -26,10 +26,9 @@ const Navbar = () => {
 
   return (
     <nav 
-      className="sticky top-0 z-50 backdrop-blur-xl border-b"
+      className="sticky top-0 z-50 border-b"
       style={{ 
         backgroundColor: 'var(--background)', 
-        opacity: '0.95',
         borderColor: 'var(--border)'
       }}
     >

@@ -20,16 +20,18 @@
   --text: #E8F0E8;
 }
 
-/* Smooth theme transitions - only for specific elements */
+/* Optimized transitions - only essential elements */
 body {
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Prevent flash of content before animations - use opacity and transform only */
+/* Reduced transitions for better performance */
+nav, .navbar {
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
 
-/* Only apply transitions to specific elements that need them */
-nav, .navbar, .card, .button, .tag, .footer, .link {
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+.card, .button, .tag, .footer, .link {
+  transition: color 0.2s ease;
 }
 
 /* Remove transitions from animated elements to prevent glitches */
@@ -163,7 +165,7 @@ a:hover {
   }
 }
 
-/* Modern hover animations */
+/* Original hover animations - keeping your preferred effects */
 .hover-lift {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -189,9 +191,9 @@ a:hover {
   transform: scale(1.02);
 }
 
-/* Smooth transitions for all interactive elements */
+/* Optimized transitions for interactive elements */
 button, a, [role="button"] {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 /* Enhanced focus states */
@@ -255,7 +257,7 @@ button, a, [role="button"] {
   overflow: visible;
 }
 
-/* Faster delay system */
+/* Original delay system - keeping your preferred timing */
 .animate-delay-100 { animation-delay: 0.05s; }
 .animate-delay-200 { animation-delay: 0.1s; }
 .animate-delay-300 { animation-delay: 0.15s; }
@@ -301,12 +303,13 @@ button, a, [role="button"] {
   margin: -1rem 0;
 }
 
-/* Animation Classes - Faster, snappier animations */
+/* Animation Classes - Original timing with GPU acceleration */
 .animate-fade-in-up {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 0.5s ease-out forwards;
   animation-fill-mode: both;
+  will-change: opacity, transform;
 }
 
 .animate-fade-in-left {
@@ -314,6 +317,7 @@ button, a, [role="button"] {
   transform: translateX(-30px);
   animation: fadeInLeft 0.5s ease-out forwards;
   animation-fill-mode: both;
+  will-change: opacity, transform;
 }
 
 .animate-fade-in-right {
@@ -321,6 +325,7 @@ button, a, [role="button"] {
   transform: translateX(30px);
   animation: fadeInRight 0.5s ease-out forwards;
   animation-fill-mode: both;
+  will-change: opacity, transform;
 }
 
 .animate-scale-in {
@@ -328,10 +333,11 @@ button, a, [role="button"] {
   transform: scale(0.95);
   animation: scaleIn 0.5s ease-out forwards;
   animation-fill-mode: both;
+  will-change: opacity, transform;
 }
 
 
-/* Keyframes */
+/* Keyframes - Original timing */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
