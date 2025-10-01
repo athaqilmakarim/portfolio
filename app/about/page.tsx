@@ -65,7 +65,7 @@ export default function AboutPage() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 gradient-text animate-fade-in-up animate-delay-200">
             About Me
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-text/80 max-w-2xl mx-auto animate-fade-in-up animate-delay-300">
+          <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto animate-fade-in-up animate-delay-300" style={{ color: 'var(--text)', opacity: '0.8' }}>
             A brief introduction to my background, skills, and what drives my passion for technology.
           </p>
         </div>
@@ -78,8 +78,8 @@ export default function AboutPage() {
                 <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 mx-auto mb-2 md:mb-3 bg-primary/10 rounded-full flex items-center justify-center">
                   {stat.icon}
                 </div>
-                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-text mb-1">{stat.value}</p>
-                <p className="text-xs sm:text-sm text-text/70">{stat.label}</p>
+                <p className="text-xl sm:text-2xl md:text-3xl font-bold mb-1" style={{ color: 'var(--text)' }}>{stat.value}</p>
+                <p className="text-xs sm:text-sm" style={{ color: 'var(--text)', opacity: '0.7' }}>{stat.label}</p>
               </div>
             </Card>
           ))}
@@ -88,18 +88,18 @@ export default function AboutPage() {
         {/* Bio and Education */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
           <div className="animate-fade-in-left">
-            <h2 className="text-xl sm:text-2xl font-semibold mb-3 md:mb-4 text-text">Bio</h2>
-            <p className="text-sm sm:text-base text-text/80 leading-relaxed">{bio}</p>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-3 md:mb-4" style={{ color: 'var(--text)' }}>Bio</h2>
+            <p className="text-sm sm:text-base leading-relaxed" style={{ color: 'var(--text)', opacity: '0.8' }}>{bio}</p>
           </div>
           <div className="animate-fade-in-right">
-            <h2 className="text-xl sm:text-2xl font-semibold mb-3 md:mb-4 text-text">Education & Background</h2>
-            <p className="text-base sm:text-lg font-medium text-primary mb-2">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-3 md:mb-4" style={{ color: 'var(--text)' }}>Education & Background</h2>
+            <p className="text-base sm:text-lg font-medium mb-2" style={{ color: 'var(--primary)' }}>
               Bachelor of Computer Science (Double Degree)
             </p>
-            <p className="text-sm sm:text-base text-text/80 mb-3 md:mb-4">
+            <p className="text-sm sm:text-base mb-3 md:mb-4" style={{ color: 'var(--text)', opacity: '0.8' }}>
               University of Queensland (Australia) & University of Indonesia (Indonesia) — Graduated 2025
             </p>
-            <h3 className="text-base sm:text-lg font-semibold text-text mb-2">Relevant Coursework:</h3>
+            <h3 className="text-base sm:text-lg font-semibold mb-2" style={{ color: 'var(--text)' }}>Relevant Coursework:</h3>
             <div className="flex flex-wrap gap-1 md:gap-2">
               {educationCourses.map((course, index) => (
                 <Tag key={index} variant="secondary" className="text-xs hover-scale">{course}</Tag>
@@ -114,7 +114,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {Object.entries(skills).map(([category, skillList], index) => (
               <div key={category} className="bg-surface/40 p-4 md:p-6 rounded-[var(--radius)] border border-border hover:shadow-md hover:-translate-y-1 transition-all duration-300 ease-out-expo animate-fade-in-up hover-lift" style={{ animationDelay: `${600 + index * 150}ms` }}>
-                <h3 className="text-lg sm:text-xl font-semibold text-text mb-2 md:mb-3">{category}</h3>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 md:mb-3" style={{ color: 'var(--text)' }}>{category}</h3>
                 <div className="flex flex-wrap gap-1 md:gap-2">
                   {skillList.map((skill) => (
                     <Tag key={skill} className="hover-scale text-xs">{skill}</Tag>
@@ -137,9 +137,9 @@ export default function AboutPage() {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg sm:text-xl font-semibold text-text mb-1">Google Data Analytics</h3>
-                  <p className="text-sm text-text/80 mb-2">Google • 2024</p>
-                  <p className="text-xs sm:text-sm text-text/60 mb-3">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-1" style={{ color: 'var(--text)' }}>Google Data Analytics</h3>
+                  <p className="text-sm mb-2" style={{ color: 'var(--text)', opacity: '0.8' }}>Google • 2024</p>
+                  <p className="text-xs sm:text-sm mb-3" style={{ color: 'var(--text)', opacity: '0.6' }}>
                     Completed a comprehensive program covering data cleaning, analysis, visualization, and interpretation using SQL, R, and Tableau.
                   </p>
                   <div className="flex flex-wrap gap-1 md:gap-2">
@@ -151,14 +151,14 @@ export default function AboutPage() {
               </div>
             </Card>
 
-            <Card className="border-dashed border-2 border-border bg-transparent flex items-center justify-center text-center text-text/60 hover:-translate-y-1 animate-fade-in-right hover-lift">
+            <Card className="border-dashed border-2 border-border bg-transparent flex items-center justify-center text-center hover:-translate-y-1 animate-fade-in-right hover-lift" style={{ color: 'var(--text)', opacity: '0.6' }}>
               <div className="p-4 md:p-6 flex flex-col items-center">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary/10 rounded-full flex items-center justify-center mb-2 md:mb-3">
                   <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                   </svg>
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2 text-text">More Certifications Coming Soon!</h3>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2" style={{ color: 'var(--text)' }}>More Certifications Coming Soon!</h3>
                 <p className="text-xs sm:text-sm">Stay tuned for additional credentials in software development and data science.</p>
               </div>
             </Card>

@@ -23,8 +23,8 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   return (
     <div className={`space-y-2 ${className || ''}`}>
       <div className="flex justify-between items-center">
-        <span className="text-sm font-medium text-text">{label}</span>
-        <span className="text-sm text-text/70">{percentage}%</span>
+        <span className="text-sm font-medium" style={{ color: 'var(--text)' }}>{label}</span>
+        <span className="text-sm" style={{ color: 'var(--text)', opacity: '0.7' }}>{percentage}%</span>
       </div>
       <div className="progress-bar">
         <div 

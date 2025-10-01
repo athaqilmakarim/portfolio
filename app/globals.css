@@ -5,10 +5,46 @@
 :root {
   --radius: 16px;
   --background: #FAF9EE;
-  --surface: #DCCFC0;
+  --surface: rgba(255, 255, 255, 0.7);
   --border: #EEEEEE;
   --primary: #A2AF9B;
   --text: #1F2A2E;
+}
+
+/* Dark mode variables - only added, not changing existing light theme */
+[data-theme="dark"] {
+  --background: #1A1F1A;
+  --surface: #2A2F2A;
+  --border: #3A3F3A;
+  --primary: #A2AF9B;
+  --text: #E8F0E8;
+}
+
+/* Smooth theme transitions - only for specific elements */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Prevent flash of content before animations - use opacity and transform only */
+
+/* Only apply transitions to specific elements that need them */
+nav, .navbar, .card, .button, .tag, .footer, .link {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Remove transitions from animated elements to prevent glitches */
+.animate-fade-in-up,
+.animate-fade-in-left,
+.animate-fade-in-right,
+.animate-scale-in,
+.hover-lift,
+.hover-scale,
+[class*="animate-"],
+[class*="hover-"],
+.hero-section,
+.hero-title,
+.gradient-text {
+  transition: none !important;
 }
 
 h1 { 
@@ -17,6 +53,7 @@ h1 {
   line-height: 1.4;
   letter-spacing: -0.025em;
   padding-bottom: 0.5rem;
+  color: var(--text);
 }
 
 @media (min-width: 768px) {
@@ -32,6 +69,7 @@ h2 {
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.025em;
+  color: var(--text);
 }
 
 @media (min-width: 768px) {
@@ -45,6 +83,7 @@ h3 {
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.4;
+  color: var(--text);
 }
 
 @media (min-width: 768px) {
@@ -57,6 +96,7 @@ h3 {
 p { 
   line-height: 1.7;
   font-size: 0.9375rem;
+  color: var(--text);
 }
 
 @media (min-width: 768px) {
@@ -69,6 +109,7 @@ p {
 a { 
   text-underline-offset: 4px;
   transition: all 0.2s ease;
+  color: var(--text);
 }
 
 a:hover {
@@ -214,6 +255,18 @@ button, a, [role="button"] {
   overflow: visible;
 }
 
+/* Faster delay system */
+.animate-delay-100 { animation-delay: 0.05s; }
+.animate-delay-200 { animation-delay: 0.1s; }
+.animate-delay-300 { animation-delay: 0.15s; }
+.animate-delay-400 { animation-delay: 0.2s; }
+.animate-delay-500 { animation-delay: 0.25s; }
+.animate-delay-600 { animation-delay: 0.3s; }
+.animate-delay-700 { animation-delay: 0.35s; }
+.animate-delay-800 { animation-delay: 0.4s; }
+.animate-delay-900 { animation-delay: 0.45s; }
+.animate-delay-1000 { animation-delay: 0.5s; }
+
 @media (min-width: 768px) {
   .hero-title {
     line-height: 1.3;
@@ -248,42 +301,35 @@ button, a, [role="button"] {
   margin: -1rem 0;
 }
 
-/* Animation Classes */
+/* Animation Classes - Faster, snappier animations */
 .animate-fade-in-up {
   opacity: 0;
   transform: translateY(30px);
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-fill-mode: both;
 }
 
 .animate-fade-in-left {
   opacity: 0;
   transform: translateX(-30px);
-  animation: fadeInLeft 0.6s ease-out forwards;
+  animation: fadeInLeft 0.5s ease-out forwards;
+  animation-fill-mode: both;
 }
 
 .animate-fade-in-right {
   opacity: 0;
   transform: translateX(30px);
-  animation: fadeInRight 0.6s ease-out forwards;
+  animation: fadeInRight 0.5s ease-out forwards;
+  animation-fill-mode: both;
 }
 
 .animate-scale-in {
   opacity: 0;
   transform: scale(0.95);
-  animation: scaleIn 0.6s ease-out forwards;
+  animation: scaleIn 0.5s ease-out forwards;
+  animation-fill-mode: both;
 }
 
-/* Animation Delays */
-.animate-delay-100 { animation-delay: 100ms; }
-.animate-delay-200 { animation-delay: 200ms; }
-.animate-delay-300 { animation-delay: 300ms; }
-.animate-delay-400 { animation-delay: 400ms; }
-.animate-delay-500 { animation-delay: 500ms; }
-.animate-delay-600 { animation-delay: 600ms; }
-.animate-delay-700 { animation-delay: 700ms; }
-.animate-delay-800 { animation-delay: 800ms; }
-.animate-delay-900 { animation-delay: 900ms; }
-.animate-delay-1000 { animation-delay: 1000ms; }
 
 /* Keyframes */
 @keyframes fadeInUp {

@@ -12,7 +12,7 @@ export default function ExperiencePage() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 gradient-text animate-fade-in-up animate-delay-200">
             Work Experience
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-text/80 max-w-2xl mx-auto animate-fade-in-up animate-delay-300">
+          <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto animate-fade-in-up animate-delay-300" style={{ color: 'var(--text)', opacity: '0.8' }}>
             A detailed look into my professional roles, achievements, and the impact I&#39;ve made in each position.
           </p>
         </div>
@@ -28,9 +28,9 @@ export default function ExperiencePage() {
                       <div className="w-2 h-2 sm:w-3 sm:h-3 bg-primary rounded-full flex-shrink-0"></div>
                       <span className="text-xs sm:text-sm font-medium text-primary/80">{exp.year}</span>
                     </div>
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-text mb-1 md:mb-2">{exp.title}</h2>
-                    <p className="text-base sm:text-lg font-semibold text-primary mb-1">{exp.company}</p>
-                    <p className="text-text/70 text-sm">{exp.role}</p>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 md:mb-2" style={{ color: 'var(--text)' }}>{exp.title}</h2>
+                    <p className="text-base sm:text-lg font-semibold mb-1" style={{ color: 'var(--primary)' }}>{exp.company}</p>
+                    <p className="text-sm" style={{ color: 'var(--text)', opacity: '0.7' }}>{exp.role}</p>
                   </div>
                   <div className="mt-3 md:mt-0">
                     <span className="inline-flex items-center px-2 md:px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
@@ -40,13 +40,13 @@ export default function ExperiencePage() {
                 </div>
 
                 <div className="mb-4 md:mb-6">
-                  <p className="text-sm sm:text-base text-text/80 leading-relaxed">{exp.summary}</p>
+                  <p className="text-sm sm:text-base leading-relaxed" style={{ color: 'var(--text)', opacity: '0.8' }}>{exp.summary}</p>
                 </div>
 
                 {exp.achievements && exp.achievements.length > 0 && (
                   <div className="mb-4 md:mb-6">
-                    <h3 className="text-base sm:text-lg font-semibold text-text mb-2 md:mb-3 flex items-center gap-2">
-                      <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <h3 className="text-base sm:text-lg font-semibold mb-2 md:mb-3 flex items-center gap-2" style={{ color: 'var(--text)' }}>
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: 'var(--primary)' }}>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       Key Achievements
@@ -55,7 +55,7 @@ export default function ExperiencePage() {
                       {exp.achievements.map((achievement, idx) => (
                         <div key={idx} className="flex items-start gap-2 md:gap-3 p-2 md:p-3 bg-surface/30 rounded-lg hover-scale smooth-transition">
                           <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-primary rounded-full flex-shrink-0 mt-1.5 md:mt-2"></div>
-                          <span className="text-text/80 text-xs sm:text-sm">{achievement}</span>
+                          <span className="text-xs sm:text-sm" style={{ color: 'var(--text)', opacity: '0.8' }}>{achievement}</span>
                         </div>
                       ))}
                     </div>
@@ -64,8 +64,8 @@ export default function ExperiencePage() {
 
                 {exp.tech && exp.tech.length > 0 && (
                   <div className="mb-4 md:mb-6">
-                    <h3 className="text-base sm:text-lg font-semibold text-text mb-2 md:mb-3 flex items-center gap-2">
-                      <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <h3 className="text-base sm:text-lg font-semibold mb-2 md:mb-3 flex items-center gap-2" style={{ color: 'var(--text)' }}>
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: 'var(--primary)' }}>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                       </svg>
                       Technologies & Skills

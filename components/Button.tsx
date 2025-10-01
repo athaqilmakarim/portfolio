@@ -14,8 +14,8 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', size = 'md', href, onClick, className, target, rel }) => {
   const baseStyles = "relative overflow-hidden rounded-[var(--radius)] px-4 py-2 font-medium transition-all duration-300 ease-out focus-outline active:scale-[0.98] group";
-  const primaryStyles = "bg-primary text-text/90 border border-border hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5";
-  const ghostStyles = "bg-transparent text-text border border-transparent hover:bg-border/60 hover:border-primary/30 hover:text-primary hover:shadow-md hover:-translate-y-0.5";
+  const primaryStyles = "border hover:shadow-lg hover:-translate-y-0.5";
+  const ghostStyles = "bg-transparent border border-transparent hover:shadow-md hover:-translate-y-0.5";
 
   const sizeStyles = {
     sm: "px-3 py-1.5 text-sm",
@@ -24,7 +24,7 @@ const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', size = '
   };
 
   const content = (
-    <span className={`relative z-10 transition-all duration-300 ${variant === 'primary' ? 'text-text/90' : 'text-text'}`}>
+    <span className="relative z-10 transition-all duration-300" style={{ color: 'var(--text)' }}>
       {children}
     </span>
   );
@@ -33,6 +33,10 @@ const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', size = '
     <button
       className={`${baseStyles} ${sizeStyles[size]} ${variant === 'primary' ? primaryStyles : ghostStyles} ${className || ''}`}
       onClick={onClick}
+      style={{
+        backgroundColor: variant === 'primary' ? 'var(--primary)' : 'transparent',
+        borderColor: variant === 'primary' ? 'var(--border)' : 'transparent'
+      }}
     >
       {variant === 'primary' && (
         <span className="absolute inset-0 block bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-shine"></span>

@@ -15,14 +15,14 @@ const Tag: React.FC<TagProps> = ({
   className,
   variant = 'default'
 }) => {
-  const baseStyles = "inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs font-medium transition-all duration-200 ease-out-expo active:scale-[0.98] focus-outline";
-  const defaultStyles = "border-border bg-surface/60 text-text/80 hover:bg-border/60 hover:-translate-y-0.5";
-  const activeStyles = "border-primary/40 bg-primary/15 text-primary hover:-translate-y-0.5";
-  const secondaryStyles = "border-border bg-surface/60 text-text/70 hover:-translate-y-0.5";
-  const primaryVariantStyles = "border-primary/40 bg-primary/15 text-primary hover:-translate-y-0.5";
-  const successVariantStyles = "border-green-400/40 bg-green-400/15 text-green-700 hover:-translate-y-0.5";
-  const warningVariantStyles = "border-yellow-400/40 bg-yellow-400/15 text-yellow-700 hover:-translate-y-0.5";
-  const techVariantStyles = "border-border bg-surface/60 text-text/70 hover:-translate-y-0.5";
+  const baseStyles = "inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs font-medium transition-all duration-200 ease-out-expo active:scale-[0.98] focus-outline hover:-translate-y-0.5";
+  const defaultStyles = "border-border bg-surface/60 text-text/80 hover:bg-border/60";
+  const activeStyles = "border-primary/40 bg-primary/15 text-primary";
+  const secondaryStyles = "border-border bg-surface/60 text-text/70";
+  const primaryVariantStyles = "border-primary/40 bg-primary/15 text-primary";
+  const successVariantStyles = "border-green-400/40 bg-green-400/15 text-green-700";
+  const warningVariantStyles = "border-yellow-400/40 bg-yellow-400/15 text-yellow-700";
+  const techVariantStyles = "border-border bg-surface/60 text-text/70";
 
   const getVariantStyles = () => {
     switch (variant) {

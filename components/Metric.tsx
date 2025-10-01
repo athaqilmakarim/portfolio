@@ -15,10 +15,10 @@ const Metric: React.FC<MetricProps> = ({ value, label, icon, className }) => {
           {icon}
         </div>
       )}
-      <div className="text-2xl font-bold text-text mb-1">
+      <div className="text-2xl font-bold mb-1" style={{ color: 'var(--text)' }}>
         {value}
       </div>
-      <div className="text-sm text-text/70">
+      <div className="text-sm" style={{ color: 'var(--text)', opacity: '0.7' }}>
         {label}
       </div>
     </div>

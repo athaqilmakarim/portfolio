@@ -10,7 +10,7 @@ const Section: React.FC<SectionProps> = ({ children, eyebrow, className }) => {
   return (
     <section className={`space-y-3 md:space-y-4 mb-10 md:mb-14 ${className || ''}`}>
       {eyebrow && (
-        <p className="uppercase tracking-wider text-xs text-text/60">
+        <p className="uppercase tracking-wider text-xs" style={{ color: 'var(--text)', opacity: '0.6' }}>
           {eyebrow}
         </p>
       )}

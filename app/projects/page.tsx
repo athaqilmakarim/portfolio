@@ -23,13 +23,13 @@ export default function ProjectsPage() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 gradient-text animate-fade-in-up animate-delay-200">
             Featured Projects
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-text/80 max-w-2xl mx-auto animate-fade-in-up animate-delay-300">
+          <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto animate-fade-in-up animate-delay-300" style={{ color: 'var(--text)', opacity: '0.8' }}>
             A collection of my work showcasing expertise in Frontend Development, UI/UX Design, and Data Analytics.
           </p>
         </div>
 
         {/* Filter Tags */}
-        <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12 animate-fade-in-up animate-delay-400">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12 animate-fade-in-up animate-delay-200">
           {filters.map((filter) => (
             <Tag
               key={filter}
@@ -45,7 +45,7 @@ export default function ProjectsPage() {
         {/* Project Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {filteredProjects.map((project, index) => (
-            <Link key={project.slug} href={`/projects/${project.slug}`} className="group project-card animate-fade-in-up hover-lift" style={{ animationDelay: `${500 + index * 100}ms` }}>
+            <Link key={project.slug} href={`/projects/${project.slug}`} className="group project-card animate-fade-in-up hover-lift" style={{ animationDelay: `${200 + index * 50}ms` }}>
               <Card className="h-full flex flex-col hover:shadow-lg transition-all duration-300">
                 <div className="flex-1 flex flex-col p-4 md:p-6">
                   {/* Project Header */}
@@ -56,7 +56,7 @@ export default function ProjectsPage() {
                         Project {String(index + 1).padStart(2, '0')}
                       </span>
                     </div>
-                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-border/50 flex items-center justify-center text-text/60 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 project-arrow">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-border/50 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 project-arrow" style={{ color: 'var(--text)', opacity: '0.6' }}>
                       <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h14M12 5l7 7-7 7"></path>
                       </svg>
@@ -64,7 +64,7 @@ export default function ProjectsPage() {
                   </div>
 
                   {/* Project Title */}
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 md:mb-3 text-text project-title" style={{ minHeight: '2.5rem' }}>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 md:mb-3 project-title" style={{ minHeight: '2.5rem', color: 'var(--text)' }}>
                     {project.title}
                   </h3>
 
@@ -76,7 +76,7 @@ export default function ProjectsPage() {
                   </div>
 
                   {/* Project Summary */}
-                  <p className="text-xs sm:text-sm md:text-base text-text/80 flex-1 project-summary leading-relaxed">
+                  <p className="text-xs sm:text-sm md:text-base flex-1 project-summary leading-relaxed" style={{ color: 'var(--text)', opacity: '0.8' }}>
                     {project.summary}
                   </p>
                 </div>
@@ -84,10 +84,10 @@ export default function ProjectsPage() {
                 {/* Project Footer */}
                 <div className="mt-auto pt-3 md:pt-4 border-t border-border/50 px-4 md:px-6 pb-4 md:pb-6">
                   <div className="flex items-center justify-between">
-                    <span className="text-primary/80 text-xs sm:text-sm font-medium group-hover:translate-x-1 transition-transform duration-200 ease-out-expo project-link-text">
+                    <span className="text-xs sm:text-sm font-medium group-hover:translate-x-1 transition-transform duration-200 ease-out-expo project-link-text" style={{ color: 'var(--primary)', opacity: '0.8' }}>
                       View Project Details
                     </span>
-                    <svg className="w-3 h-3 sm:w-4 sm:h-4 text-primary/60 group-hover:translate-x-1 transition-transform duration-200 ease-out-expo" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-200 ease-out-expo" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: 'var(--primary)', opacity: '0.6' }}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                   </div>
