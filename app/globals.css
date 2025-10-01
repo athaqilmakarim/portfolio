@@ -20,18 +20,24 @@
   --text: #E8F0E8;
 }
 
-/* Optimized transitions - only essential elements */
+/* Ultra-smooth page transitions with GPU acceleration */
 body {
   transition: background-color 0.2s ease, color 0.2s ease;
+  contain: layout style paint;
 }
 
-/* Reduced transitions for better performance */
+/* Optimized navbar transitions */
 nav, .navbar {
   transition: background-color 0.2s ease, border-color 0.2s ease;
+  will-change: background-color, border-color;
+  contain: layout style paint;
 }
 
+/* Smooth interactive elements */
 .card, .button, .tag, .footer, .link {
   transition: color 0.2s ease;
+  will-change: color;
+  contain: layout style paint;
 }
 
 /* Remove transitions from animated elements to prevent glitches */
@@ -150,11 +156,14 @@ a:hover {
   background: linear-gradient(to right, var(--primary), var(--text));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   /* Ensure proper spacing for the actual text */
   line-height: 1.4;
   letter-spacing: -0.01em;
   padding-bottom: 0.5rem;
   display: block;
+  will-change: auto;
+  contain: layout style paint;
 }
 
 @media (min-width: 768px) {
@@ -165,18 +174,22 @@ a:hover {
   }
 }
 
-/* Original hover animations - keeping your preferred effects */
+/* Ultra-smooth hover animations with GPU acceleration */
 .hover-lift {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, box-shadow;
+  contain: layout style paint;
 }
 
 .hover-lift:hover {
-  transform: translateY(-2px);
+  transform: translate3d(0, -2px, 0);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 .hover-glow {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: box-shadow;
+  contain: layout style paint;
 }
 
 .hover-glow:hover {
@@ -184,11 +197,13 @@ a:hover {
 }
 
 .hover-scale {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  contain: layout style paint;
 }
 
 .hover-scale:hover {
-  transform: scale(1.02);
+  transform: translate3d(0, 0, 0) scale(1.02);
 }
 
 /* Optimized transitions for interactive elements */
@@ -257,17 +272,17 @@ button, a, [role="button"] {
   overflow: visible;
 }
 
-/* Original delay system - keeping your preferred timing */
-.animate-delay-100 { animation-delay: 0.05s; }
-.animate-delay-200 { animation-delay: 0.1s; }
-.animate-delay-300 { animation-delay: 0.15s; }
-.animate-delay-400 { animation-delay: 0.2s; }
-.animate-delay-500 { animation-delay: 0.25s; }
-.animate-delay-600 { animation-delay: 0.3s; }
-.animate-delay-700 { animation-delay: 0.35s; }
-.animate-delay-800 { animation-delay: 0.4s; }
-.animate-delay-900 { animation-delay: 0.45s; }
-.animate-delay-1000 { animation-delay: 0.5s; }
+/* Optimized delay system - smoother staggering */
+.animate-delay-100 { animation-delay: 0.08s; }
+.animate-delay-200 { animation-delay: 0.16s; }
+.animate-delay-300 { animation-delay: 0.24s; }
+.animate-delay-400 { animation-delay: 0.32s; }
+.animate-delay-500 { animation-delay: 0.4s; }
+.animate-delay-600 { animation-delay: 0.48s; }
+.animate-delay-700 { animation-delay: 0.56s; }
+.animate-delay-800 { animation-delay: 0.64s; }
+.animate-delay-900 { animation-delay: 0.72s; }
+.animate-delay-1000 { animation-delay: 0.8s; }
 
 @media (min-width: 768px) {
   .hero-title {
@@ -303,82 +318,86 @@ button, a, [role="button"] {
   margin: -1rem 0;
 }
 
-/* Animation Classes - Original timing with GPU acceleration */
+/* Ultra-smooth animations with GPU acceleration */
 .animate-fade-in-up {
   opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.5s ease-out forwards;
+  transform: translate3d(0, 30px, 0);
+  animation: fadeInUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   animation-fill-mode: both;
   will-change: opacity, transform;
+  contain: layout style paint;
 }
 
 .animate-fade-in-left {
   opacity: 0;
-  transform: translateX(-30px);
-  animation: fadeInLeft 0.5s ease-out forwards;
+  transform: translate3d(-30px, 0, 0);
+  animation: fadeInLeft 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   animation-fill-mode: both;
   will-change: opacity, transform;
+  contain: layout style paint;
 }
 
 .animate-fade-in-right {
   opacity: 0;
-  transform: translateX(30px);
-  animation: fadeInRight 0.5s ease-out forwards;
+  transform: translate3d(30px, 0, 0);
+  animation: fadeInRight 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   animation-fill-mode: both;
   will-change: opacity, transform;
+  contain: layout style paint;
 }
 
 .animate-scale-in {
   opacity: 0;
-  transform: scale(0.95);
-  animation: scaleIn 0.5s ease-out forwards;
+  transform: translate3d(0, 0, 0) scale(0.95);
+  animation: scaleIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   animation-fill-mode: both;
   will-change: opacity, transform;
+  contain: layout style paint;
 }
 
 
-/* Keyframes - Original timing */
+/* Ultra-smooth keyframes with GPU acceleration */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translate3d(0, 30px, 0);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translate3d(-30px, 0, 0);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes fadeInRight {
   0% {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translate3d(30px, 0, 0);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes scaleIn {
   0% {
     opacity: 0;
-    transform: scale(0.95);
+    transform: translate3d(0, 0, 0) scale(0.95);
   }
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
