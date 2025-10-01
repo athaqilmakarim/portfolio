@@ -126,7 +126,7 @@ const Navbar = () => {
                 style={{
                   color: isActive(item.href) ? 'var(--primary)' : 'var(--text)',
                   opacity: isActive(item.href) ? '1' : '0.8',
-                  backgroundColor: isActive(item.href) ? 'var(--primary)' : 'transparent',
+                  backgroundColor: isActive(item.href) ? 'rgba(162, 175, 155, 0.1)' : 'transparent',
                   borderLeftColor: isActive(item.href) ? 'var(--primary)' : 'transparent'
                 }}
               >
